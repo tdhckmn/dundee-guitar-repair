@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Carousel Template · Bootstrap v5.3</title>
+    <title>Dundee Guitar Repair</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
@@ -97,62 +97,11 @@
     <link href="carousel.css" rel="stylesheet">
   </head>
   <body>
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="check2" viewBox="0 0 16 16">
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-      </symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-      </symbol>
-    </svg>
-
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-
     
 <header data-bs-theme="dark">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Carousel</a>
+      <a class="navbar-brand" href="#">Dundee Guitar Repair</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -162,16 +111,12 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="services.html">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <a class="nav-link" href="https://calendly.com/" target="_blank">Schedule</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
@@ -190,9 +135,9 @@
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Dundee Guitar Repair</h1>
-            <p class="opacity-75">Keep Your Instrument Playing Its Best.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Schedule Your Repair Today</a></p>
+            <h1>Expert Repair.</h1>
+            <p class="opacity-75">Your guitar will play like you’ve always wanted it to. Don’t let your instrument get in the way of the music you want to play!</p>
+            <p><a class="btn btn-lg btn-primary" href="#experience">Experience</a></p>
           </div>
         </div>
       </div>
@@ -200,9 +145,9 @@
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <div class="container">
           <div class="carousel-caption">
-            <h1>Your Guitar, Our Passion.</h1>
-            <p>We are dedicated to providing top-quality guitar repair and setup services. With years of experience, our skilled technicians have the knowledge and expertise to restore your instrument to its optimal playing condition. Whether you're a seasoned musician or just starting out, we're here to help.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            <h1>Our Services.</h1>
+            <p>Explore our comprehensive and affordable services for any stringed instrument.</p>
+            <p><a class="btn btn-lg btn-primary" href="services.html">Learn more</a></p>
           </div>
         </div>
       </div>
@@ -210,9 +155,9 @@
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>Our Services.</h1>
-            <p>Explore all of our services, from guitar setup to viola dusting.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            <h1>Schedule Now.</h1>
+            <p>Schedule your stringed instrument service today!</p>
+            <p><a class="btn btn-lg btn-primary" href="https://calendly.com" target="_blank">Schedule</a></p>
           </div>
         </div>
       </div>
@@ -234,73 +179,83 @@
 
   <div class="container marketing">
 
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-        <h2 class="fw-normal">Expert Guitar Repair & Setup</h2>
-        <p>Speculative preventative fostering of ultradynamic bacterial cultures ensure premium flavour.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div>
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-        <h2 class="fw-normal">Knob Tweaking & More</h2>
-        <p>Tweak that knob.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div>
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-        <h2 class="fw-normal">Very nice, how much?</h2>
-        <p>That's what we like to hear. Explore the nuances of the regenerative spectometry — evaluate the prerogative, and swallow the pierogi whole.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div>
-    </div>
-
 
     <!-- START THE FEATURETTES -->
 
-    <hr class="featurette-divider">
+    <div class="featurette-divider">
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">We respect the craft. <span class="text-body-secondary">Imagine deeply.</span></h2>
-        <p class="lead">Great feral horcruxes prolapse each additional prophetic pentameter. With a fresh, deep cleansing, your friends won't ever know who their real father is.</p>
+        <h2 class="featurette-heading fw-normal lh-1" id="experience">Experience.</h2>
+        <p class="lead">I was trained as a guitar technician at Marshall Music in 2008, and have been honing my craft ever since. As a professional engineer of 8+ years and a musician of 20+ years, I bring together my intimate knowledge of the instrument and attention to detail to make your instrument play like you’ve always wanted it to.</p>
       </div>
       <div class="col-md-5">
         <img class="featurette-image img-fluid mx-auto" 
-        src="assets/images/showcase-1.png" 
+        src="assets/images/img1.jpg" 
         alt="Better" 
         width="500" 
         height="500">
       </div>
     </div>
 
-    <hr class="featurette-divider">
+    <hr class="featurette-divider" id="quality">
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">You can't fuck with a dusty viola. <span class="text-body-secondary">Bring it to me.</span></h2>
-        <p class="lead">A fuzzier friendly hand hasn't polished your wood in some time. Come to Lester.</p>
+        <h2 class="featurette-heading fw-normal lh-1">Quality.</h2>
+        <p class="lead">We service all stringed instruments, with a specialty in electric and acoustic guitars and basses. This includes restrings, setups, hardware installation, electronics installation, fretwork, and more. Instruments are not one-size-fits-all, so we always consider your playing preferences for each setup to ensure it plays best in <b><i>your</i></b> hands.</p>
       </div>
       <div class="col-md-5">
         <img class="featurette-image img-fluid mx-auto" 
-        src="assets/images/showcase-2.png" 
+        src="assets/images/img2.jpg" 
         alt="Faster" 
         width="500" 
         height="500">
       </div>
     </div>
 
-    <hr class="featurette-divider">
+    <hr class="featurette-divider" id="service">
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Rich electronics. <span class="text-body-secondary">Deep understand.</span></h2>
-        <p class="lead">Whether therefore or heretofor, this epiglottis will frendulate the circumstancial dura mater.</p>
+        <h2 class="featurette-heading fw-normal lh-1">Service.</h2>
+        <p class="lead">We offer next-day service of restrings and setups for all electric or acoustic guitars, basses, and orchestral string instruments. While-you-wait service may also be available, allowing you to explore beautiful downtown Dundee or the local Cabela’s while your instrument is serviced. Pick-up and Drop-off service is also available within Monroe County for a mileage-based fee.</p>
       </div>
       <div class="col-md-5">
         <img class="featurette-image img-fluid mx-auto" 
-        src="assets/images/showcase-3.png" 
+        src="assets/images/img3.jpg" 
+        alt="Stronger" 
+        width="500" 
+        height="500">      
+      </div>
+    </div>
+
+    <hr class="featurette-divider" id="upgrades">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Upgrades.</h2>
+        <p class="lead">Installation of new pickups, preamps, hardware, and custom assemblies are available. Please contact us before purchasing any new components, so we can ensure proper fit to your instrument.</p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image img-fluid mx-auto" 
+        src="assets/images/img4.jpg" 
+        alt="Stronger" 
+        width="500" 
+        height="500">      
+      </div>
+    </div>
+
+    <hr class="featurette-divider" id="cables">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Cables.</h2>
+        <p class="lead">Installation of new pickups, preamps, hardware, and custom assemblies are available. Please contact us before purchasing any new components, so we can ensure proper fit to your instrument.</p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image img-fluid mx-auto" 
+        src="assets/images/img5.jpg" 
         alt="Stronger" 
         width="500" 
         height="500">      
@@ -317,7 +272,7 @@
   <!-- FOOTER -->
   <footer class="container">
     <p class="float-end"><a href="#">Back to top</a></p>
-    <p>&copy; 2017–2024 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <p>&copy; 2024 Dundee Guitar Repair &middot; <a href="https://calendly.com/" target="_blank">Schedule</a></p>
   </footer>
 </main>
 <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
