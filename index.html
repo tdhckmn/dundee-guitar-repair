@@ -187,8 +187,15 @@
         .swiper-pagination-bullet-active {
             background-color: #c8862d;
         }
-        /* Position arrows outside the container on larger screens */
+        /* Hide arrows on mobile, position outside on larger screens */
+        .swiper-button-next, .swiper-button-prev {
+            display: none;
+        }
+
         @media (min-width: 768px) {
+            .swiper-button-next, .swiper-button-prev {
+                display: block;
+            }
             .swiper-button-next {
                 right: -45px;
             }
@@ -234,11 +241,11 @@
 
     <main role="main">
         <!-- Hero Section -->
-        <section id="home" class="hero-bg text-white h-[35vh] md:h-[45vh] flex items-center" aria-label="Hero section">
+        <section id="home" class="hero-bg text-white h-[40vh] md:h-[45vh] flex items-center pb-8 md:pb-0" aria-label="Hero section">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-3xl md:text-5xl font-bold mb-4">Expert Guitar Repair Services</h1>
-                <p class="text-lg md:text-xl max-w-3xl mx-auto">Professional guitar and bass repair services. Your instrument will play like you've always wanted it to. Don't let your guitar get in the way of the music you want to play!</p>
-                <a href="#services" class="mt-8 inline-block bg-brand-gold text-brand-dark hover:bg-opacity-80 font-semibold px-8 py-3 rounded-md transition duration-300">View Our Services</a>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-6 md:mb-8">Professional guitar and bass repair services. Your instrument will play like you've always wanted it to. Don't let your guitar get in the way of the music you want to play!</p>
+                <a href="#services" class="inline-block bg-brand-gold text-brand-dark hover:bg-opacity-80 font-semibold px-8 py-3 rounded-md transition duration-300">View Our Services</a>
             </div>
         </section>
 
