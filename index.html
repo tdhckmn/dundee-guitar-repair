@@ -1,276 +1,280 @@
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
-  <head><script src="assets/js/color-modes.js"></script>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Tom Hickman and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dundee Guitar Repair</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script>
+        // Custom Tailwind CSS Configuration
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'brand-gold': '#c8862d',
+                'brand-dark': '#0f0e0c',
+                'brand-teal': {
+                  800: '#102a24',
+                  900: '#081411',
+                },
+                'brand-text': '#d1e0db',
+                'brand-border': '#1c493f',
+              }
+            }
+          }
         }
-      }
-
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://googleusercontent.com/file_content/1');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Custom Swiper Styles */
+        .about-swiper-container {
+            position: relative;
+        }
+        .about-swiper {
+            padding-bottom: 40px; /* Space for pagination */
+            overflow: hidden; /* Hide cloned slides */
+        }
+        .swiper-pagination {
+            bottom: 0 !important;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #c8862d;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #c8862d;
+        }
+        /* Position arrows outside the container on larger screens */
+        @media (min-width: 768px) {
+            .swiper-button-next {
+                right: -45px;
+            }
+            .swiper-button-prev {
+                left: -45px;
+            }
+        }
     </style>
+</head>
+<body class="bg-brand-teal-900 text-brand-text">
 
-    
-    <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
-  </head>
-  <body>
-    
-<header data-bs-theme="dark">
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Dundee Guitar Repair</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="mailto:dundeeguitarrepair@gmail.com" target="_blank">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://calendly.com/dundeeguitarrepair" target="_blank">Schedule</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<main>
-
-  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#b5e2fa"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>Expert Repair.</h1>
-            <p class="opacity-75">Your guitar will play like you’ve always wanted it to. Don’t let your instrument get in the way of the music you want to play!</p>
-            <p><a class="btn btn-lg btn-primary" href="#experience">Experience</a></p>
-          </div>
+    <!-- Header & Navigation -->
+    <header class="bg-brand-dark/90 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="flex items-center space-x-3">
+                <!-- Musical Note Icon -->
+                <svg class="h-8 w-8 text-brand-gold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
+                </svg>
+                <span class="text-xl font-bold text-white">Dundee Guitar Repair</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="text-gray-300 hover:text-brand-gold transition duration-300">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-brand-gold transition duration-300">About</a>
+                <a href="#services" class="text-gray-300 hover:text-brand-gold transition duration-300">Services</a>
+                <a href="mailto:dundeeguitarrepair@gmail.com" class="text-gray-300 hover:text-brand-gold transition duration-300">Contact</a>
+                <a href="https://calendly.com/dundeeguitarrepair" target="_blank" class="bg-brand-gold text-brand-dark hover:bg-opacity-80 font-semibold px-4 py-2 rounded-md transition duration-300">Schedule Now</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#home" class="block text-gray-300 hover:text-brand-gold transition duration-300">Home</a>
+            <a href="#about" class="block text-gray-300 hover:text-brand-gold transition duration-300">About</a>
+            <a href="#services" class="block text-gray-300 hover:text-brand-gold transition duration-300">Services</a>
+            <a href="mailto:dundeeguitarrepair@gmail.com" class="block text-gray-300 hover:text-brand-gold transition duration-300">Contact</a>
+            <a href="https://calendly.com/dundeeguitarrepair" target="_blank" class="block bg-brand-gold text-brand-dark hover:bg-opacity-80 font-semibold px-4 py-2 rounded-md transition duration-300 mt-2">Schedule Now</a>
         </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#ebf2fa"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>Our Services.</h1>
-            <p>Explore our comprehensive and affordable services for any stringed instrument.</p>
-            <p><a class="btn btn-lg btn-primary" href="services.html">Learn more</a></p>
-          </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg text-white h-[50vh] md:h-[60vh] flex items-center">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4">Expert Guitar Repair.</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto">Your guitar will play like you've always wanted it to. Don't let your instrument get in the way of the music you want to play!</p>
+                <a href="#services" class="mt-8 inline-block bg-brand-gold text-brand-dark hover:bg-opacity-80 font-semibold px-8 py-3 rounded-md transition duration-300">View Our Services</a>
+            </div>
+        </section>
+
+        <!-- About/Features Section Carousel -->
+        <section id="about" class="py-20 bg-brand-teal-800">
+            <div class="container mx-auto px-6">
+                <!-- New container for positioning arrows -->
+                <div class="about-swiper-container max-w-4xl mx-auto">
+                    <!-- Swiper Carousel -->
+                    <div class="swiper about-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1: Experience -->
+                            <div class="swiper-slide">
+                                <div class="grid md:grid-cols-2 gap-8 items-center">
+                                    <img src="assets/493224074_122121434246724460_5441490691742552408_n.jpeg" alt="Guitar on workbench" class="rounded-lg shadow-lg w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/e2e8f0?text=Image+Not+Found';">
+                                    <div class="space-y-4">
+                                        <h2 class="text-3xl font-bold text-white">Experience</h2>
+                                        <p>I am a professionally trained guitar tech with over 15 years experience, local to the Dundee/Monroe area of Southeast Michigan. As a professional engineer and lifelong musician, I bring together my intimate knowledge of the instrument and attention to detail to make your instrument play like you've always wanted it to.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 2: Quality -->
+                            <div class="swiper-slide">
+                                <div class="grid md:grid-cols-2 gap-8 items-center">
+                                    <img src="assets/487512983_122117985644724460_8768294266717282473_n.jpeg" alt="Close-up of guitar strings" class="rounded-lg shadow-lg w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/e2e8f0?text=Image+Not+Found';">
+                                    <div class="space-y-4">
+                                        <h2 class="text-3xl font-bold text-white">Quality</h2>
+                                        <p>We service all stringed instruments, with a specialty in electric and acoustic guitars and basses. This includes restrings, setups, hardware installation, electronics installation, fretwork, and more. Instruments are not one-size-fits-all, so we always consider your playing preferences for each setup to ensure it plays best in <b><i>your</i></b> hands.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 3: Service -->
+                            <div class="swiper-slide">
+                                <div class="grid md:grid-cols-2 gap-8 items-center">
+                                    <img src="assets/474679885_122106318110724460_7898012535145628700_n.jpeg" alt="Guitar technician working" class="rounded-lg shadow-lg w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/e2e8f0?text=Image+Not+Found';">
+                                    <div class="space-y-4">
+                                        <h2 class="text-3xl font-bold text-white">Service</h2>
+                                        <p>We offer next-day service of restrings and setups. While-you-wait service may also be available, allowing you to explore beautiful downtown Dundee. Pick-up and Drop-off service is also available within Monroe County for a mileage-based fee.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-white">Our Services</h2>
+                    <p class="text-lg mt-2">Comprehensive, affordable, and fast service for all stringed instruments.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Restring -->
+                    <div class="bg-brand-teal-800 p-8 rounded-lg shadow-lg text-center">
+                        <h3 class="text-2xl font-bold text-white mb-4">Restring</h3>
+                        <p class="text-4xl font-bold text-brand-gold mb-4">$20 <span class="text-lg text-gray-400 font-normal">+ Strings</span></p>
+                        <ul class="text-left space-y-2">
+                            <li>✓ Body Cleaning</li>
+                            <li>✓ Restring + Tuning</li>
+                        </ul>
+                    </div>
+                    <!-- Setup -->
+                    <div class="bg-brand-teal-800 p-8 rounded-lg shadow-lg text-center">
+                        <h3 class="text-2xl font-bold text-white mb-4">Setup</h3>
+                        <p class="text-4xl font-bold text-brand-gold mb-4">$45 <span class="text-lg text-gray-400 font-normal">+ Strings</span></p>
+                        <p class="text-brand-gold text-sm mb-4">+$20 for Floyd Rose</p>
+                        <ul class="text-left space-y-2">
+                            <li>✓ Body Cleaning & Polishing</li>
+                            <li>✓ Fretboard Cleaning & Conditioning</li>
+                            <li>✓ Truss Rod/Nut/Saddle Adjustment</li>
+                            <li>✓ Restring + Tuning</li>
+                            <li>✓ String + Pickup Height</li>
+                            <li>✓ Intonation</li>
+                        </ul>
+                    </div>
+                    <!-- Fretwork -->
+                    <div class="bg-brand-teal-800 p-8 rounded-lg shadow-lg text-center">
+                        <h3 class="text-2xl font-bold text-white mb-4">Fretwork</h3>
+                        <p class="text-4xl font-bold text-brand-gold mb-4">$150 <span class="text-lg text-gray-400 font-normal">+ Strings</span></p>
+                        <ul class="text-left space-y-2">
+                            <li>✓ Fret level, crown, & dress</li>
+                            <li>✓ Complete Setup</li>
+                        </ul>
+                    </div>
+                    <!-- Upgrades -->
+                    <div class="bg-brand-teal-800 p-8 rounded-lg shadow-lg text-center">
+                        <h3 class="text-2xl font-bold text-white mb-4">Upgrades & Cables</h3>
+                        <p class="text-2xl font-bold text-brand-gold mb-4">Contact for Pricing</p>
+                        <ul class="text-left space-y-2">
+                            <li>✓ Pickup Installation</li>
+                            <li>✓ Input Jack Replacement</li>
+                            <li>✓ Potentiometer Replacement</li>
+                            <li>✓ Bridge/Saddle/Nut Replacement</li>
+                            <li>✓ Custom Length Cables</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-teal-800 border-t border-brand-border py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2024 Dundee Guitar Repair</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="mailto:dundeeguitarrepair@gmail.com" class="hover:text-brand-gold transition duration-300">dundeeguitarrepair@gmail.com</a>
+                <span>&middot;</span>
+                <a href="https://calendly.com/dundeeguitarrepair" target="_blank" class="hover:text-brand-gold transition duration-300">Schedule an Appointment</a>
+            </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#79D7BE"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>Schedule Now.</h1>
-            <p>Schedule your stringed instrument service today!</p>
-            <p><a class="btn btn-lg btn-primary" href="https://calendly.com/dundeeguitarrepair" target="_blank">Schedule</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+    </footer>
 
-  <div class="container marketing">
+    <!-- Swiper.js JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <div class="featurette-divider">
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1" id="experience">Experience.</h2>
-        <p class="lead">I am a professionally trained guitar tech with over 15 years experience, local to the Dundee/Monroe area of Southeast Michigan. As a professional engineer and lifelong musician, I bring together my intimate knowledge of the instrument and attention to detail to make your instrument play like you've always wanted it to.</p>
-      </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" 
-        src="assets/images/img1.jpg" 
-        alt="Experience" 
-        width="500" 
-        height="500">
-      </div>
-    </div>
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-    <hr class="featurette-divider">
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
 
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1" id="quality">Quality.</h2>
-        <p class="lead">We service all stringed instruments, with a specialty in electric and acoustic guitars and basses. This includes restrings, setups, hardware installation, electronics installation, fretwork, and more. Instruments are not one-size-fits-all, so we always consider your playing preferences for each setup to ensure it plays best in <b><i>your</i></b> hands.</p>
-      </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" 
-        src="assets/images/img2.jpg" 
-        alt="Quality" 
-        width="500" 
-        height="500">
-      </div>
-    </div>
+        // Initialize Swiper
+        const swiper = new Swiper('.about-swiper', {
+            // Optional parameters
+            loop: true,
+            autoplay: {
+                delay: 10000, // Slower autoplay
+                disableOnInteraction: false,
+            },
 
-    <hr class="featurette-divider">
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1" id="service">Service.</h2>
-        <p class="lead">We offer next-day service of restrings and setups for all electric or acoustic guitars, basses, and orchestral string instruments. While-you-wait service may also be available, allowing you to explore beautiful downtown Dundee or the local Cabela’s while your instrument is serviced. Pick-up and Drop-off service is also available within Monroe County for a mileage-based fee.</p>
-      </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" 
-        src="assets/images/img3.jpg" 
-        alt="Service" 
-        width="500" 
-        height="500">      
-      </div>
-    </div>
+            // Navigation arrows
+            navigation: {
+                nextEl: '.about-swiper-container .swiper-button-next',
+                prevEl: '.about-swiper-container .swiper-button-prev',
+            },
+        });
+    </script>
 
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1" id="upgrades">Upgrades.</h2>
-        <p class="lead">Installation of new pickups, preamps, hardware, and custom assemblies are available. Please contact us before purchasing any new components, so we can ensure proper fit to your instrument.</p>
-      </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" 
-        src="assets/images/img4.jpg" 
-        alt="Upgrades" 
-        width="500" 
-        height="500">      
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1" id="cables">Cables.</h2>
-        <p class="lead">We also offer custom length guitar and patch cables. No cable length is too short or long, and we use the best available cable and connectors to ensure long–lasting life and signal integrity.</p>
-      </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" 
-        src="assets/images/img8.jpg" 
-        alt="Cables" 
-        width="500" 
-        height="500">      
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-  </div>
-
-
-  <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-end"><a href="#">Back to top</a></p>
-    <p>&copy; 2024 Dundee Guitar Repair &middot; <a target="_blank" href="mailto:dundeeguitarrepair@gmail.com">dundeeguitarrepair@gmail.com</a> &middot; <a href="https://calendly.com/dundeeguitarrepair" target="_blank">Schedule</a></p>
-  </footer>
-</main>
-<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-
-    </body>
+</body>
 </html>
