@@ -169,6 +169,39 @@
         #home {
             scroll-margin-top: 80px;
         }
+
+        /* Service card hover effects */
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(200, 134, 45, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(200, 134, 45, 0.3);
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        /* Subtle glow effect on hover */
+        .service-card:hover .text-brand-gold {
+            text-shadow: 0 0 8px rgba(200, 134, 45, 0.6);
+        }
         .hero-bg {
             background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://googleusercontent.com/file_content/1');
             background-size: cover;
@@ -315,7 +348,7 @@
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Restring -->
-                    <div class="bg-brand-teal-800 p-8 rounded-lg shadow-lg text-center">
+                    <div class="bg-brand-teal-800 p-8 rounded-lg shadow-lg text-center service-card">
                         <h3 class="text-2xl font-bold text-white mb-4">Restring</h3>
                         <p class="text-4xl font-bold text-brand-gold mb-4">$20 <span class="text-lg text-gray-400 font-normal">+ Strings</span></p>
                         <ul class="text-left space-y-2">
@@ -324,7 +357,7 @@
                         </ul>
                     </div>
                     <!-- Setup -->
-                    <div class="bg-brand-teal-800 p-8 rounded-lg shadow-lg text-center">
+                    <div class="bg-brand-teal-800 p-8 rounded-lg shadow-lg text-center service-card">
                         <h3 class="text-2xl font-bold text-white mb-4">Setup</h3>
                         <p class="text-4xl font-bold text-brand-gold mb-4">$45 <span class="text-lg text-gray-400 font-normal">+ Strings</span></p>
                         <p class="text-brand-gold text-sm mb-4">+$20 for Floyd Rose</p>
@@ -338,7 +371,7 @@
                         </ul>
                     </div>
                     <!-- Fretwork -->
-                    <div class="bg-brand-teal-800 p-8 rounded-lg shadow-lg text-center">
+                    <div class="bg-brand-teal-800 p-8 rounded-lg shadow-lg text-center service-card">
                         <h3 class="text-2xl font-bold text-white mb-4">Fretwork</h3>
                         <p class="text-4xl font-bold text-brand-gold mb-4">$150 <span class="text-lg text-gray-400 font-normal">+ Strings</span></p>
                         <ul class="text-left space-y-2">
@@ -347,7 +380,7 @@
                         </ul>
                     </div>
                     <!-- Upgrades -->
-                    <div class="bg-brand-teal-800 p-8 rounded-lg shadow-lg text-center">
+                    <div class="bg-brand-teal-800 p-8 rounded-lg shadow-lg text-center service-card">
                         <h3 class="text-2xl font-bold text-white mb-4">Upgrades & Cables</h3>
                         <p class="text-2xl font-bold text-brand-gold mb-4">Contact for Pricing</p>
                         <ul class="text-left space-y-2">
@@ -408,7 +441,7 @@
             // Optional parameters
             loop: true,
             autoplay: {
-                delay: 10000, // Slower autoplay
+                delay: 15000, // Slower autoplay
                 disableOnInteraction: false,
             },
 
@@ -424,6 +457,76 @@
                 prevEl: '.about-swiper-container .swiper-button-prev',
             },
         });
+
+                // Pause autoplay on hover
+        const aboutSection = document.getElementById('about');
+        aboutSection.addEventListener('mouseenter', () => {
+            swiper.autoplay.stop();
+        });
+
+        aboutSection.addEventListener('mouseleave', () => {
+            swiper.autoplay.start();
+        });
+
+        // Konami Code Easter Egg
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.code);
+
+            // Keep only the last 10 keystrokes
+            if (konamiCode.length > 10) {
+                konamiCode.shift();
+            }
+
+            // Check if the sequence matches
+            if (konamiCode.length === 10 && konamiCode.every((key, index) => key === konamiSequence[index])) {
+                // Konami code detected! Launch your link here
+                window.open('https://www.youtube.com/shorts/BR78tzrz46o', '_blank');
+
+                // Optional: Show a fun message
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: linear-gradient(135deg, #c8862d, #e6a94c);
+                    color: white;
+                    padding: 15px 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                    z-index: 10000;
+                    font-weight: bold;
+                    animation: slideIn 0.5s ease;
+                `;
+                notification.textContent = '🎸 Konami Code Activated! 🎸';
+                document.body.appendChild(notification);
+
+                // Remove notification after 3 seconds
+                setTimeout(() => {
+                    notification.style.animation = 'slideOut 0.5s ease';
+                    setTimeout(() => notification.remove(), 500);
+                }, 3000);
+
+                // Reset the code
+                konamiCode = [];
+            }
+        });
+
+        // Add CSS animations for the notification
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 
 </body>
